@@ -12,7 +12,8 @@ describe("Method Overriding", () => {
 
   class Manajer extends Employee {
     sayHello(name: string): void {
-      console.info(`Hello ${name}, my name is ${this.name} iam your Manajer`);
+      super.sayHello(name);
+      console.info(`iam your Manajer`);
     }
   }
   it("should support Method Overriding", () => {
