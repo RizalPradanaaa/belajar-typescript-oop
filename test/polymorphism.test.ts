@@ -8,7 +8,15 @@ describe("Polymorphism", () => {
 
   // Method Polymorphism
   function SayHello(employe: Employee): void {
-    console.info(`Hello ${employe.name}`);
+    if (employe instanceof VicePresident) {
+      const vp = employe as VicePresident;
+      console.info(`Hello ${vp.name}`);
+    } else if (employe instanceof Manajer) {
+      const manajer = employe as Manajer;
+      console.info(`Hello ${manajer.name}`);
+    } else {
+      console.info(`Hello ${employe.name}`);
+    }
   }
 
   it("should support", () => {
